@@ -1,0 +1,22 @@
+<h1>Gerenciador de Conteudo</h1>
+
+<a href="http://localhost/crudphp/?pagina=admin&metodo=create">Criar Publicaçao</a><br>
+<br>
+<hr>
+<br>
+<table border="3">
+    <tr>
+        <th>ID</th>
+        <th>TITULO</th>
+        <th>ALTERAR</th>
+        <th>DELETE</th>
+    </tr>
+    {% for postagem in postagens %}
+    <tr>
+        <th>{{postagem.id}}</th>
+        <th>{{postagem.titulo}}</th>
+        <th><a href="http://localhost/crudphp/?pagina=admin&metodo=change&id={{postagem.id}}"> ALTERAR</a></th>
+        <th><a href="http://localhost/crudphp/?pagina=admin&metodo=delete&id={{postagem.id}}"> DELETE</a></th>
+    </tr>
+    {% endfor %} 
+</table>
